@@ -163,7 +163,7 @@ def get_feature_map(dataset, signal_name):
     elif signal_name == 'flex':
         return feature_list[16:22]
     return feature_list
-    
+  
 
 def get_tactile_graph_struc(feature_list):
     """ Generates a graph structure from adjacency matrix for tactile features. """
