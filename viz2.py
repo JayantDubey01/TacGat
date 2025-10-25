@@ -85,7 +85,7 @@ def test(path):
     r.setup_data(batch_size=16)
     r.run(traj=traj)
 
-path = "TEST3.pt"
+path = "TacGat/TEST3.pt"
 #main(path)
 test(path=path)
 
