@@ -34,7 +34,7 @@ class setup_and_run:
         self.traj= traj
         self.pathtest = pathtest
 
-        self.num_files = len(glob.glob("datasets/Train/*.pt"))  # or *.npy, *.pt, etc.
+        self.num_files = len(glob.glob("TacGat/datasets/Train/*.pt"))  # or *.npy, *.pt, etc.
         print("Number of files:", self.num_files)
     
 
@@ -52,7 +52,7 @@ class setup_and_run:
                 if i==0 or i==self.num_files+1:    # NOTE: Skip datasets
                     continue
                 
-                data = torch.load(f"datasets/Train/{i}.pt")
+                data = torch.load(f"TacGat/datasets/Train/{i}.pt")
 
                 sc = data["sc"]
                 capi = data["capi"]
@@ -77,7 +77,7 @@ class setup_and_run:
                 if i==0 or i==self.num_files+1:    # NOTE: Skip datasets
                     continue
                 
-                data = torch.load(f"datasets/Train/{i}.pt")
+                data = torch.load(f"TacGat/datasets/Train/{i}.pt")
                 sc = data["sc"]
                 capi = data["capi"]
 
@@ -89,7 +89,7 @@ class setup_and_run:
                 trial_datasets.append(dataset)
                         
             # val dataset path:
-            data = torch.load(f"datasets/Val/0.pt")
+            data = torch.load(f"TacGat/datasets/Val/0.pt")
             sc = data["sc"]
             capi = data["capi"]
             Dv = DataRepresentation(sc_array=sc, capi_array=capi)
