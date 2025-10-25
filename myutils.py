@@ -16,7 +16,8 @@ def get_feature_map():
 
 def get_tactile_graph_struc(feature_list):
     """ Generates a graph structure from adjacency matrix for tactile features. """
-    adjacency_matrix = pd.read_csv('/home/jayantdubey/workspace/NeuralNet/Tactile-GAT/data/tactile/my_graph_struc.csv', index_col='Name')
+    adjacency_matrix = pd.read_csv('TacGat/data/tactile/my_graph_struc.csv', index_col='Name')
+    #adjacency_matrix = pd.read_csv('/home/jayantdubey/workspace/NeuralNet/Tactile-GAT/data/tactile/my_graph_struc.csv', index_col='Name')
     struc_map = {ft: adjacency_matrix.columns[adjacency_matrix.loc[ft] == 1].tolist() for ft in feature_list}
     return struc_map
     
