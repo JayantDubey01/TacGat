@@ -327,7 +327,7 @@ class test_GCTCN:
         plt.tight_layout()
         plt.show()
             
-        data = torch.load(f"datasets/Val/0.pt")
+        data = torch.load(f"TacGat/datasets/Val/0.pt")
         sc = data["sc"]
         capi = data["capi"]
         Dv = DataRepresentation(sc_array=sc, capi_array=capi)
