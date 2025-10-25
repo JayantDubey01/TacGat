@@ -129,7 +129,7 @@ class setup_and_run:
                 if i == 0 or i == self.num_files + 1:
                     continue
 
-                data = torch.load(f"datasets/Train/{i}.pt")
+                data = torch.load(f"TacGat/datasets/Train/{i}.pt")
                 sc = data["sc"]
                 capi = data["capi"]
 
