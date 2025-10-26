@@ -11,6 +11,7 @@ from utils.ReadSC import ReadSC2
 from utils.Align import AlignData
 from utils.MatchIOFiles import matching_io
 from utils.represent_data import DataRepresentation
+import plotly.graph_objects as go
 
 #from run_CorrNN import train_weighted_corr_NN
 #from setuprun import setup_and_run
@@ -47,12 +48,38 @@ def main():
 
     traj = Dv.target
 
-    fig = plt.figure()
-    ax = fig.add_subplot(projection='3d')
-    M = np.zeros(traj.shape)
-    plot_subset_traj(ax, traj, M)
+    plot_traj(traj)
 
-        
+import plotly.graph_objects as go
+
+def plot_traj(traj):
+    fig = go.Figure()
+
+    # traj is assumed to be shape [N, 3] in XYZ order
+    fig.add_trace(go.Scatter3d(
+        x=traj[:, 0],
+        y=traj[:, 1],
+        z=traj[:, 2],
+        mode='lines',
+        line=dict(width=4, color='green'),
+        name='Trajectory'
+    ))
+
+    fig.update_layout(
+        scene=dict(
+            xaxis_title="X",
+            yaxis_title="Y",
+            zaxis_title="Z"
+        ),
+        width=700,
+        height=500,
+        showlegend=False
+    )
+
+    fig.show()
+
+   
+
 
 def weighted_output(input_data, target_data, V):
     # Unit vector for reference axis 
