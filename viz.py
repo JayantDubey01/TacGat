@@ -40,8 +40,7 @@ def plot_traj(traj):
         showlegend=False
     )
 
-    fig.show()
-    print("reached")
+    fig.write_html("traj_plot.html")
 
 
 
