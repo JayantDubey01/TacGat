@@ -244,7 +244,7 @@ def plot_subset_traj(ax, traj, M_list):
     #ax.scatter(x1[0], x1[1], x1[2], color = 'purple')   # Point A
     #ax.plot([x1[0], x2[0]], [x1[1], x2[1]], [x1[2], x2[2]], color='black', label='Line (x1-x2)')    # vector d_
     ax.plot([-1.0*traj[:, 6], M_list[:, 0]], [-1.0*traj[:, 5], M_list[:, 1]], [-1.0*traj[:, 4], M_list[:, 2]], color='green', label='Plane') # M
-    #plt.show()
+    plt.show()
 
 def viz_pred(pred_transform, target_data):
 
