@@ -86,8 +86,10 @@ def test(path):
     r.run(traj=traj)
 
 path = "TacGat/TEST4.pt"
-main(path)
-test(path=path)
+#main(path)
+#test(path=path)
+
+data = ReadSC2("TacGat/datasets/SC2024-10-24-data002.sc")
 
 
 '''
