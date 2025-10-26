@@ -40,10 +40,17 @@ def main():
 
         D = DataRepresentation(sc_array=sc, capi_array=capi)'''
 
-        data = torch.load(f"TacGat/datasets/Val/0.pt")
-        sc = data["sc"]
-        capi = data["capi"]
-        Dv = DataRepresentation(sc_array=sc, capi_array=capi)
+    data = torch.load(f"TacGat/datasets/Val/0.pt")
+    sc = data["sc"]
+    capi = data["capi"]
+    Dv = DataRepresentation(sc_array=sc, capi_array=capi)
+
+    traj = Dv.target
+
+    fig = plt.figure()
+    ax = fig.add_subplot(projection='3d')
+    M = np.zeros(traj.shape)
+    plot_subset_traj(ax, traj, M)
 
         
 
