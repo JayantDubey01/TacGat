@@ -26,7 +26,7 @@ def main():
 
 
     # --- load each trial, compute its own H, and pack (x,y,Hrep) ---
-    for i in range(len(io_pair)):
+    '''for i in range(len(io_pair)):
     #for i in range(2):
         CAPIreader = ReadCapi2(io_pair[i, 0])
         SCreader   = ReadSC2(io_pair[i, 1])
@@ -38,7 +38,12 @@ def main():
         sc = Synced.adjusted_sc_clean    # [N, 11]
         capi = Synced.adjusted_capi_clean  # [N, 7]
 
-        D = DataRepresentation(sc_array=sc, capi_array=capi)
+        D = DataRepresentation(sc_array=sc, capi_array=capi)'''
+
+        data = torch.load(f"TacGat/datasets/Val/0.pt")
+        sc = data["sc"]
+        capi = data["capi"]
+        Dv = DataRepresentation(sc_array=sc, capi_array=capi)
 
         
 
