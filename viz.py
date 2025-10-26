@@ -12,8 +12,8 @@ from utils.Align import AlignData
 from utils.MatchIOFiles import matching_io
 from utils.represent_data import DataRepresentation
 
-from run_CorrNN import train_weighted_corr_NN
-from setuprun import setup_and_run
+#from run_CorrNN import train_weighted_corr_NN
+#from setuprun import setup_and_run
 
 
 
