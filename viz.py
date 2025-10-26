@@ -41,6 +41,7 @@ def plot_traj(traj):
     )
 
     fig.show()
+    print("reached")
 
 
 
