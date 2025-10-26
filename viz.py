@@ -16,6 +16,32 @@ import plotly.graph_objects as go
 #from run_CorrNN import train_weighted_corr_NN
 #from setuprun import setup_and_run
 
+def plot_traj(traj):
+    fig = go.Figure()
+
+    # traj is assumed to be shape [N, 3] in XYZ order
+    fig.add_trace(go.Scatter3d(
+        x=traj[:, 0],
+        y=traj[:, 1],
+        z=traj[:, 2],
+        mode='lines',
+        line=dict(width=4, color='green'),
+        name='Trajectory'
+    ))
+
+    fig.update_layout(
+        scene=dict(
+            xaxis_title="X",
+            yaxis_title="Y",
+            zaxis_title="Z"
+        ),
+        width=700,
+        height=500,
+        showlegend=False
+    )
+
+    fig.show()
+
 
 
 def main():
@@ -51,32 +77,6 @@ def main():
     plot_traj(traj)
 
 main()
-
-def plot_traj(traj):
-    fig = go.Figure()
-
-    # traj is assumed to be shape [N, 3] in XYZ order
-    fig.add_trace(go.Scatter3d(
-        x=traj[:, 0],
-        y=traj[:, 1],
-        z=traj[:, 2],
-        mode='lines',
-        line=dict(width=4, color='green'),
-        name='Trajectory'
-    ))
-
-    fig.update_layout(
-        scene=dict(
-            xaxis_title="X",
-            yaxis_title="Y",
-            zaxis_title="Z"
-        ),
-        width=700,
-        height=500,
-        showlegend=False
-    )
-
-    fig.show()
 
    
 
