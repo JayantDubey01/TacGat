@@ -50,7 +50,7 @@ def main():
 
     plot_traj(traj)
 
-import plotly.graph_objects as go
+main()
 
 def plot_traj(traj):
     fig = go.Figure()
