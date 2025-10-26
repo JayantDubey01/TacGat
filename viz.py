@@ -18,7 +18,7 @@ from utils.represent_data import DataRepresentation
 
 
 def main():
-
+    '''
     path = "/home/jayantdubey/Desktop/TrainData"
     testpath = "/home/jayantdubey/Desktop/TestData"
 
@@ -26,7 +26,7 @@ def main():
 
 
     # --- load each trial, compute its own H, and pack (x,y,Hrep) ---
-    '''for i in range(len(io_pair)):
+    for i in range(len(io_pair)):
     #for i in range(2):
         CAPIreader = ReadCapi2(io_pair[i, 0])
         SCreader   = ReadSC2(io_pair[i, 1])
